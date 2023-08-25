@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    ports:
+      - 86:5000
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: subhi
+      MYSQL_PASSWORD: subhipassword
+    ports:
+      - 87:3306
